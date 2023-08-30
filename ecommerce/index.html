@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>My E-Commerce Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+        }
+        .product {
+            background-color: #fff;
+            padding: 1rem;
+            margin: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            flex: 1; /* Equal width for each product */
+            max-width: 300px; /* Maximum width for each product */
+            cursor: pointer; /* Add pointer cursor to products */
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); /* Add box shadow to product images */
+            transition: transform 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
+        }
+        .product img {
+            display: block;
+            margin: 0 auto; /* Center the image horizontally */
+            max-width: 100%;
+            height: auto;
+        }
+        .product h3 {
+            margin-top: 0;
+        }
+        .product h3:hover{
+            color: #e44d26;
+        }
+        .product p {
+            color: #888;
+        }
+        .product-price {
+            color: #e44d26; /* Price color */
+            font-weight: bold;
+        }
+        .product:hover {
+            transform: translateY(-5px); /* Add a slight lift on hover */
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Adjust box shadow on hover */
+        }
+        .product-price:hover{
+            color: #e44d26;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .cta a.add-to-cart {
+            background-color: #e44d26; /* Button color for "Add to Cart" */
+        }
+        .shopnow:hover{
+            background-color: olivedrab;
+        }
+        /* Footer */
+        .footer {
+            background-color: #f4f4f4;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .footer h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .contact-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: olivedrab;
+        }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-icon {
+            font-size: 24px;
+            margin: 0 10px;
+            color: #333;
+            transition: color 0.3s;
+        }
+        .social-icon:hover {
+            color: #e44d26;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to My E-Commerce Store</h1>
+        <p>Shop the latest trends in fashion and more!</p>
+    </div>
+    <div class="container">
+    <!-- row -1-->
+    <div class="row">
+        <div class="product" onclick="selectProduct('Apple Watch', 49.99)">
+            <img src="watch.jpeg" alt="Product 1"><br><br>
+            <h3>Apple Watch</h3>
+            <p class="product-description">High-quality product designed for style and comfort.</p>
+            <p class="product-price">$49.99</p>
+        </div>
+        <div class="product" onclick="selectProduct('JBL Headphones', 29.99)">
+            <img src="headphones.jpeg" alt="Product 2"><br><br>
+            <h3>JBL Headphones</h3>
+            <p class="product-description">Versatile product suitable for various occasions.</p>
+            <p class="product-price">$29.99</p>
+        </div>
+        <div class="product" onclick="selectProduct('Iphone 12', 199.99)">
+            <img src="iphone.jpeg" alt="Product 3"><br><br>
+            <h3>Iphone 12</h3>
+            <p class="product-description">Innovative product for tech enthusiasts.</p>
+            <p class="product-price">$199.99</p>
+        </div>
+    </div>
+    <!-- row -2-->
+    <div class="row">
+        <div class="product" onclick="selectProduct('Refrigerator', 129.99)">
+            <img src="./refrigrator.jpg" alt="Product 4"><br><br>
+            <h3>Refrigerator</h3>
+            <p class="product-description">Sophisticated design for a timeless look.</p>
+            <p class="product-price">$129.99</p>
+        </div>
+        <div class="product" onclick="selectProduct('Office Chair', 29.99)">
+            <img src="./chair.jpg" alt="Product 5"><br><br>
+            <h3>Office Chair</h3>
+            <p class="product-description">Affordable and versatile product for everyday use.</p>
+            <p class="product-price">$59.99</p>
+        </div>
+        <div class="product" onclick="selectProduct('Trolly', 199.99)">
+            <img src="./trolly.png" alt="Product 6"><br><br>
+            <h3>Trolly Bag</h3>
+            <p class="product-description">Modern design with exceptional comfort.</p>
+            <p class="product-price">$99.99</p>
+        </div>
+    </div>
+    <!-- row -3-->
+    <div class="row">
+        <div class="product" onclick="selectProduct('Hand Bag', 49.99)">
+            <img src="./bag.jpeg" alt="Product 4"><br><br>
+            <h3>Hand Bag</h3>
+            <p class="product-description">Affordable product for everyday convenience.</p>
+            <p class="product-price">$39.99</p>
+        </div>
+        <div class="product" onclick="selectProduct('Canon Camera', 29.99)">
+            <img src="./camera.jpeg" alt="Product 5"><br><br>
+            <h3>Canon Camera</h3>
+            <p class="product-description">Classic product with a modern twist.</p>
+            <p class="product-price">$149.99</p>
+        </div>
+        <div class="product" onclick="selectProduct('Laptop', 199.99)">
+            <img src="./laptop.jpeg" alt="Product 6"><br><br>
+            <h3>Laptop</h3>
+            <p class="product-description">Luxurious product for a touch of extravagance.</p>
+            <p class="product-price">$229.99</p>
+        </div>
+    </div>
+    </div>
+    <div class="cta">
+        <a href="#" class="add-to-cart" onclick="showCart()">Add to Cart</a>
+        <a href="./payment.html" class="shopnow">Shop Now</a>
+    </div>
+ <!-- Footer Section -->
+ <div class="footer">
+    <h2>Contact Us</h2>
+    <p>We'd love to hear from you! Send us a message:</p>
+    <form class="contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Send</button>
+    </form>
+    <div class="social-links">
+        <a href="#"><i class="fab fa-facebook social-icon"></i></a>
+        <a href="#"><i class="fab fa-twitter social-icon"></i></a>
+        <a href="#"><i class="fab fa-instagram social-icon"></i></a>
+    </div>
+</div>
+    <script>
+        const selectedProducts = [];
+
+        function selectProduct(productName, price) {
+            selectedProducts.push({ name: productName, price: price });
+            alert(`Successfully added to the cart "${productName}"`);
+        }
+
+        function showCart() {
+            const cartItemsContainer = document.querySelector('.cart-items');
+            cartItemsContainer.innerHTML = '';
+
+            selectedProducts.forEach(product => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <span>${product.name}</span>
+                    <span>$${product.price}</span>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+        }
+    </script>
+</body>
+</html>
